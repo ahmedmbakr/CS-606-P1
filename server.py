@@ -48,7 +48,7 @@ def handle_client_request(conn, addr):
     msg = str(num)
     conn.send(msg.encode())  # return the response
     print("Server sent the result {} to the client".format(msg))
-  client_handler.join()
+  # client_handler.join()
   conn.close()  # close the connection
   print("Connection closed with {}:{}".format(addr[0], addr[1]))
 
