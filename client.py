@@ -4,8 +4,10 @@ from constCS import * #-
 s = socket(AF_INET, SOCK_STREAM)
 s.connect((HOST, PORT)) # connect to server (block until accepted)
 while True:
-    msg = input("Please enter a number: ")
-    print("Number received entered: ", msg)
+    msg = input("Please enter a number, space, then number of increments to be done by the server: ")
+    split_res = msg.split(' ')
+    init_num = split_res[0], repetition = split_res[1]
+    print("Number received entered: {} to be repeated {} times", init_num, repetition)
     if msg == "STOP":
         break
     s.send(msg.encode())    # send the message
